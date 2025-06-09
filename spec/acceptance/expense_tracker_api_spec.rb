@@ -19,6 +19,7 @@ module ExpenseTracker
             }
 
             post '/expenses', JSON.generate(coffee)
+            expect(last_response.status).to eq(200)
         end
     end
 end
