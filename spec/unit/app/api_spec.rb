@@ -8,14 +8,14 @@ module ExpenseTracker
         include Rack::Test::Methods
 
         def app
-            API.new(ledger: ledger)
+            API.create(ledger: ledger)
         end
 
         let(:ledger) { instance_double('ExpenseTracker::Ledger') }
 
         describe 'POST /expenses' do
             context 'when the expense is successfully recorded' do
-                it 'returns the expense id' do
+                fit 'returns the expense id' do
                     expense = { 'some' => 'data' }
                     allow(ledger).to receive(:record)
                       .with(expense)

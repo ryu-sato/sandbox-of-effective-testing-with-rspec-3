@@ -9,13 +9,17 @@ end
 
 module ExpenseTracker
     class API < Sinatra::Base
-        def initialize(app = nil, ledger: Ledger.new)
-            @ledger = ledger
-            super(app)
+        def self.create(ledger: Ledger.new)
+            set :ledger, ledger
+            new
         end
 
+        private
+
         post '/expenses' do
-            JSON.generate('expense_id' => 42)
+            expense = JSON.parse(request.body.read)
+            result = settings.ledger.record(expense)
+            JSON.generate('expense_id' => result.expense_id)
         end
 
         get '/expenses/:date' do
