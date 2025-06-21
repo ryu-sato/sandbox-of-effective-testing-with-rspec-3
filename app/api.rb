@@ -1,13 +1,14 @@
 require 'sinatra/base'
 require 'json'
 
-class Ledger
-  def record(_expense)
-    ExpenseTracker::RecordResult.new
-  end
-end
-
 module ExpenseTracker
+    RecordResult = Struct.new(:success?, :expense_id, :error_message)
+
+    class Ledger
+        def record(expense)
+        end
+    end
+
     class API < Sinatra::Base
         def self.create(ledger: Ledger.new)
             set :ledger, ledger
