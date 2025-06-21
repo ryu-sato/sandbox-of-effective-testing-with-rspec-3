@@ -15,7 +15,7 @@ module ExpenseTracker
 
         describe 'POST /expenses' do
             context 'when the expense is successfully recorded' do
-                fit 'returns the expense id' do
+                it 'returns the expense id' do
                     expense = { 'some' => 'data' }
                     allow(ledger).to receive(:record)
                       .with(expense)
