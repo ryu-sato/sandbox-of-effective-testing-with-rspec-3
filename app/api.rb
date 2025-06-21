@@ -17,6 +17,8 @@ module ExpenseTracker
         private
 
         post '/expenses' do
+            status 404
+
             expense = JSON.parse(request.body.read)
             result = settings.ledger.record(expense)
             JSON.generate('expense_id' => result.expense_id)
