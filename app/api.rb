@@ -7,6 +7,9 @@ module ExpenseTracker
     class Ledger
         def record(expense)
         end
+
+        def search(date)
+        end
     end
 
     class API < Sinatra::Base
