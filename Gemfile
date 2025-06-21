@@ -13,3 +13,8 @@ gem "rack-test", "~> 0.7.0"
 gem "sinatra", "~> 2.0.0"
 
 gem "puma", "~> 6.6"
+
+gem 'sequel', '~> 5.0'
+gem 'sqlite3', '~> 1.4'
+
+gem "bigdecimal", "~> 3.2"
