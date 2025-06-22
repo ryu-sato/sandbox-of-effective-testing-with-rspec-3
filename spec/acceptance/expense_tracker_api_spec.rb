@@ -20,7 +20,7 @@ module ExpenseTracker
             expense.merge('id' => parsed['expense_id'])
         end
 
-        fit 'records submitted expenses' do
+        it 'records submitted expenses' do
             coffee = post_expense(
                 'payee' => 'Starbucks',
                 'amount' => 5.75,
