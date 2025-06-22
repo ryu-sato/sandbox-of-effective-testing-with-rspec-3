@@ -8,7 +8,7 @@ module ExpenseTracker
         include Rack::Test::Methods
 
         def app
-            ExpenseTracker::API.new
+            API.create
         end
 
         def post_expense(expense)
@@ -20,8 +20,7 @@ module ExpenseTracker
             expense.merge('id' => parsed['expense_id'])
         end
 
-        it 'records submitted expenses' do
-            pending "Need to persist expenses"
+        fit 'records submitted expenses' do
             coffee = post_expense(
                 'payee' => 'Starbucks',
                 'amount' => 5.75,
