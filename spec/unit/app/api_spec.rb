@@ -61,7 +61,7 @@ module ExpenseTracker
                 let(:date) { '2017-06-10' }
 
                 before do
-                    allow(ledger).to receive(:search)
+                    allow(ledger).to receive(:expenses_on)
                         .with(date)
                         .and_return(RecordResult.new(true, 417, nil))
                 end
@@ -81,7 +81,7 @@ module ExpenseTracker
                 let(:date_not_found) { '2017-06-11' }
 
                 before do
-                    allow(ledger).to receive(:search)
+                    allow(ledger).to receive(:expenses_on)
                         .with(date_not_found)
                         .and_return([])
                 end
