@@ -22,6 +22,8 @@ module ExpenseTracker
     end
 
     class API < Sinatra::Base
+        set :ledger, Ledger.new
+
         def self.create(ledger: Ledger.new)
             set :ledger, ledger
             new
