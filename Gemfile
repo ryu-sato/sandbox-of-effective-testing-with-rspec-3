@@ -18,3 +18,5 @@ gem 'sequel', '~> 5.0'
 gem 'sqlite3', '~> 1.4'
 
 gem "bigdecimal", "~> 3.2"
+
+gem "drb", "~> 2.2"
