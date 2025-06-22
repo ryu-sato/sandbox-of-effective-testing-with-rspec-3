@@ -16,7 +16,7 @@ module ExpenseTracker
             RecordResult.new(true, id, nil)
         end
 
-        def search(date)
+        def expenses_on(date)
         end
     end
 
