@@ -105,4 +105,12 @@ RSpec.configure do |config|
   config.when_first_matching_example_defined(:db) do
     require_relative 'support/db'
   end
+
+  config.alias_example_group_to :pdescribe, pry: true
+  config.alias_example_to :pit, pry: true
+
+  config.after(:example, pry: true) do |example|
+    require 'pry'
+    binding.pry
+  end
 end

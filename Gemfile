@@ -20,3 +20,5 @@ gem 'sqlite3', '~> 1.4'
 gem "bigdecimal", "~> 3.2"
 
 gem "drb", "~> 2.2"
+
+gem "pry", "~> 0.15.2"
